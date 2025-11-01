@@ -18,3 +18,10 @@ Project Status
 
 This repository is being converted from a notebook workflow into a reusable Python package plus CLI scripts with tests.
 
+CLI
+---
+
+Run evidence-removal evaluation:
+
+`python scripts/run_evidence_attack_eval.py --qa-path PeerQA/data/qa.jsonl --papers-path PeerQA/data/papers.jsonl --n 20`
+

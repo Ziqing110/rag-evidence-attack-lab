@@ -13,10 +13,13 @@ Using PeerQA-style data, it compares model behavior under:
 
 The pipeline reports Exact Match (EM), token-level F1, and abstention-style behavior (`NOT_FOUND`) to diagnose grounding failures.
 
-Project Status
---------------
 
-This repository is being converted from a notebook workflow into a reusable Python package plus CLI scripts with tests.
+Even if general RAG evaluation tools exist, this project provides a task-specific, reproducible robustness harness for scientific QA:
+
+- controlled evidence-removal attacks tied to mapped evidence
+- context construction variants to analyze failure modes
+- result-aware scoring with abstention behavior tracking (`NOT_FOUND`)
+- reproducible CSV/JSONL outputs for reporting and comparison
 
 CLI
 ---
@@ -30,4 +33,14 @@ Run context-strategy robustness evaluation:
 `python scripts/run_context_robustness_eval.py --strategy surrounding_paragraphs --qa-path PeerQA/data/qa.jsonl --papers-path PeerQA/data/papers.jsonl --n 20`
 
 `python scripts/run_context_robustness_eval.py --strategy distractor_mixed --total-sentences 20 --qa-path PeerQA/data/qa.jsonl --papers-path PeerQA/data/papers.jsonl --n 20`
+
+Generate a consolidated comparison report:
+
+`python scripts/run_results_report.py --item p1=out/evidence_attack_results.csv --item p2_para=out/context_para_results.csv --item p2_mix=out/context_mix_results.csv`
+
+Academic Attribution
+--------------------
+
+This project implementation and experimental framing are inspired by concepts and assignments from **CISC451 at Queen's University** (multimodal/document QA course content).  
+The codebase and engineering structure in this repository are independently implemented as a standalone portfolio project.
 

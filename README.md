@@ -21,6 +21,11 @@ Even if general RAG evaluation tools exist, this project provides a task-specifi
 - result-aware scoring with abstention behavior tracking (`NOT_FOUND`)
 - reproducible CSV/JSONL outputs for reporting and comparison
 
+Quickstart with venv
+----------
+
+`python3 -m venv .venv && source .venv/bin/activate && python -m pip install -e .`
+
 CLI
 ---
 

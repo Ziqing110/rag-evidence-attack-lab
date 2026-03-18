@@ -43,6 +43,24 @@ Generate a consolidated comparison report:
 
 `python scripts/run_results_report.py --item p1=out/evidence_attack_results.csv --item p2_para=out/context_para_results.csv --item p2_mix=out/context_mix_results.csv`
 
+Comparison Report Sample
+------------------------
+
+Example output from `run_results_report.py` after running three experiment settings:
+
+| setting | N | EM | F1 | NOT_FOUND_rate |
+| --- | ---: | ---: | ---: | ---: |
+| p1_original | 20 | 0.00 | 0.277563 | 0.35 |
+| p1_perturbed | 20 | 0.00 | 0.014466 | 0.90 |
+| p2_para_original | 20 | 0.00 | 0.248006 | 0.45 |
+| p2_para_perturbed | 20 | 0.00 | 0.043739 | 0.80 |
+| p2_mix_original | 20 | 0.00 | 0.300061 | 0.15 |
+| p2_mix_perturbed | 20 | 0.00 | 0.165039 | 0.45 |
+
+- `original` vs `perturbed` deltas quantify grounding sensitivity under evidence removal.
+- `F1` drop highlights answer quality degradation under attack.
+- `NOT_FOUND_rate` captures abstention behavior when evidence is missing.
+
 Academic Attribution
 --------------------
 

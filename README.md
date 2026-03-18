@@ -24,24 +24,51 @@ Even if general RAG evaluation tools exist, this project provides a task-specifi
 Quickstart with venv
 ----------
 
-`python3 -m venv .venv && source .venv/bin/activate && python -m pip install -e .`
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+```
 
 CLI
 ---
 
 Run evidence-removal evaluation:
 
-`python scripts/run_evidence_attack_eval.py --qa-path PeerQA/data/qa.jsonl --papers-path PeerQA/data/papers.jsonl --n 20`
+```bash
+python scripts/run_evidence_attack_eval.py \
+  --qa-path PeerQA/data/qa.jsonl \
+  --papers-path PeerQA/data/papers.jsonl \
+  --n 20
+```
 
 Run context-strategy robustness evaluation:
 
-`python scripts/run_context_robustness_eval.py --strategy surrounding_paragraphs --qa-path PeerQA/data/qa.jsonl --papers-path PeerQA/data/papers.jsonl --n 20`
+```bash
+python scripts/run_context_robustness_eval.py \
+  --strategy surrounding_paragraphs \
+  --qa-path PeerQA/data/qa.jsonl \
+  --papers-path PeerQA/data/papers.jsonl \
+  --n 20
+```
 
-`python scripts/run_context_robustness_eval.py --strategy distractor_mixed --total-sentences 20 --qa-path PeerQA/data/qa.jsonl --papers-path PeerQA/data/papers.jsonl --n 20`
+```bash
+python scripts/run_context_robustness_eval.py \
+  --strategy distractor_mixed \
+  --total-sentences 20 \
+  --qa-path PeerQA/data/qa.jsonl \
+  --papers-path PeerQA/data/papers.jsonl \
+  --n 20
+```
 
 Generate a consolidated comparison report:
 
-`python scripts/run_results_report.py --item p1=out/evidence_attack_results.csv --item p2_para=out/context_para_results.csv --item p2_mix=out/context_mix_results.csv`
+```bash
+python scripts/run_results_report.py \
+  --item p1=out/evidence_attack_results.csv \
+  --item p2_para=out/context_para_results.csv \
+  --item p2_mix=out/context_mix_results.csv
+```
 
 Comparison Report Sample
 ------------------------
